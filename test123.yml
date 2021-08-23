@@ -1,7 +1,7 @@
 --- 
 - 
   gather_facts: false
-  hosts: webservers
+  hosts: all
   remote_user: ec2-user
   tasks: 
     - 
