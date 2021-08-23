@@ -16,7 +16,7 @@
     unarchive:
       src: /usr/local/apache-tomcat-9.0.52
       dest: /usr/local
-      remote_src: yes
+      remote_src: no
        
   - name: start tomcat services
     shell: nohup /usr/local/apache-tomcat-9/bin/startup.shell
