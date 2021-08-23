@@ -1,35 +1,22 @@
---- 
-- 
-  gather_facts: false
-  hosts: webservers
-  remote_user: ec2-user
-  tasks: 
-    - 
-      name: "Wait for SSH to come up"
-      wait_for_connection: 
-        delay: 5
-        timeout: 90
-    - 
-      ec2_metadata_facts: ~
-      name: "Collect instance facts"
-    - 
-      become: true
-      name: "Install HTTPD"
-      yum: 
-        name: httpd
-        state: present
-    - 
-      become: true
-      name: "Start HTTPD"
-      service: 
-        enabled: true
-        name: httpd
-        state: started
-    - 
-      become: true
-      name: "Deploy content"
-      template: 
-        dest: /var/www/html/index.html
-        src: /home/ansible/index.html.j2
-  vars_files: 
-    - /home/ansible/env_vars.yml
+---
+- name:  Install Tomcat application server and Run Tomcat via shell script
+  hosts: Web
+  become: true
+  
+  tasks:
+  - name: install java
+    yum:
+      name: java
+      state: latest
+  - name: download tomcat server packages
+    geturl:
+      url: https://downloads.apache.org/tomcat/tomcat-9/v9.0.52/bin/apache-tomcat-9.0.52.tar.gz
+      dest: /usr/local
+  - name: extract tomcat packages
+    unarchive:
+      src: /usr/local/apache-tomcat-9.0.52
+      dest: /usr/local
+      remote_src: yes
+       
+  - name: start tomcat services
+    shell: nohup /usr/local/apache-tomcat-9/bin/startup.shell
