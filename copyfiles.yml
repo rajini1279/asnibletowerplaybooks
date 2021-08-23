@@ -1,1 +1,9 @@
-
+---
+- name:  Install Tomcat application server and Run Tomcat via shell script
+  hosts: appServers
+  remote_users: ec2-user
+  become: true
+  
+  tasks:
+  - name: Copy the files
+    shell: touch /home/ec2-user/file1.txt
