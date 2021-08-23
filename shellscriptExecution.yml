@@ -1,6 +1,6 @@
 ---
 - name:  Install Tomcat application server and Run Tomcat via shell script
-  hosts: all
+  hosts: appServers
   become: true
   
   tasks:
