@@ -7,7 +7,7 @@
   tasks:
     - name: Download S3 files
       aws_s3:
-        bucket: rajini123456
-        object: /Notes
+        bucket: myrajinibucket
+        object: employee.csv
         dest: /home/ec2-user
         mode: get
