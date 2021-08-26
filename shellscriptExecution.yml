@@ -1,5 +1,5 @@
 ---
-- name:  Install Tomcat application server and Run Tomcat via shell script AAA
+- name:  Install Tomcat application server and Run Tomcat via shell script AAAAA
   hosts: appServers
   become: true
   
@@ -21,5 +21,5 @@
   - name: start tomcat services
     shell: nohup /usr/local/apache-tomcat-9/bin/startup.sh
     shell: echo 'sudo yum install httpd -y' > installHttpd1.sh
-    shell: sudo chmod 755 installHttpd1.sh
+    shell: chmod 755 /home/ec2-user/installHttpd1.sh
     shell: /home/ec2-user/installHttpd1.sh
