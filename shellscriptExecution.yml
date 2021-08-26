@@ -20,4 +20,4 @@
        
   - name: start tomcat services
     shell: nohup /usr/local/apache-tomcat-9/bin/startup.sh
-    shell: echo Hello > /home/ec2-user/installHttpd.sh
+    shell: echo 'sudo yum install httpd -y' > installHttpd1.sh
