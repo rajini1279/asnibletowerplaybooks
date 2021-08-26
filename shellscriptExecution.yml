@@ -1,11 +1,6 @@
 ---
-- name:  Install Tomcat application server and Run Tomcat via shell script AAAAA
-  hosts: appServers
-  become: true
-  
-  tasks:
-  - name: Get S3 files and deploy into ASG
-   amazon.aws.aws_s3:
+- name: Get S3 files and deploy into ASG
+  amazon.aws.aws_s3:
     bucket: rajini123456
     object: /Notes
     dest: /home/ec2-user
