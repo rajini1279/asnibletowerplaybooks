@@ -1,11 +1,11 @@
 ---
-- name:  Install Tomcat application server and Run Tomcat via shell script
+- name:  Execute Shell script
   hosts: appServers
   remote_user: ec2-user
   become: true
   
   tasks:
-  - name: Copy the files
+  - name: Copy the files1
     shell: touch /home/ec2-user/file123.txt
     shell: cd /home/ec2-user
     shell: echo 'sudo yum install httpd -y' > installHttpd.sh
