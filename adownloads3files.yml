@@ -1,7 +1,7 @@
 ---
 - name: Download s3 file
   hosts: localhost
-  remote_user: ec2-user
+  remote_user: centos
   become: true
 
   tasks:
