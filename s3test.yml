@@ -16,8 +16,8 @@
 
     - name: Download S3 files
       aws_s3:
-        aws_access_key: "{{access_key}}"
-        aws_secret_key: "{{secret_key}}"
+        aws_access_key: '{{AWS_ACCESS_KEY_ID}}'
+        aws_secret_key: '{{AWS_SECRET_ACCESS_KEY}}'
         bucket: myrajinibucket
         object: employee.csv
         dest: /home/ec2-user/employee.csv
