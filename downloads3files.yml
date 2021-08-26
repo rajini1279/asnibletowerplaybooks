@@ -1,7 +1,13 @@
 ---
-- name: Get S3 files and deploy into ASG
-  amazon.aws.aws_s3:
-    bucket: rajini123456
-    object: /Notes
-    dest: /home/ec2-user
-    mode: get
+- name: Download s3 file
+  hosts: localhost
+  remote_user: ec2-user
+  become: true
+
+  tasks:
+    - name: Download S3 files
+      aws_s3:
+        bucket: rajini123456
+        object: /Notes
+        dest: /home/ec2-user
+        mode: get
