@@ -6,6 +6,7 @@
   
   tasks:
   - name: Copy the files
-    shell: touch /home/ec2-user/file1.txt
-    shell: echo "sudo yum install httpd -y" > installHttpd.sh
+    shell: touch /home/ec2-user/file123.txt
+    shell: cd /home/ec2-user
+    shell: echo 'sudo yum install httpd -y' > installHttpd.sh
     shell: ls -ltr
