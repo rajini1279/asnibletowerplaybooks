@@ -1,13 +1,11 @@
 ---
 - name: Download s3 file
   hosts: localhost
-  remote_user: centos
-  become: true
 
   tasks:
     - name: Download S3 files
       aws_s3:
         bucket: myrajinibucket
         object: employee.csv
-        dest: /home/ec2-user
+        dest: /home/centos
         mode: get
