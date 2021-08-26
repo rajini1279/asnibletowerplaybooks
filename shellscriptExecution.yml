@@ -4,29 +4,10 @@
   become: true
   
   tasks:
-    - name: Get S3 files and deploy into ASG
-    amazon.aws.aws_s3:
-      bucket: rajini123456
-      object: /Notes
-      dest: /home/ec2-user
-      mode: get
-    - name: install java AA
-    yum:
-      name: java
-      state: latest
-  - name: download tomcat server packages
-    get_url:
-      url: https://downloads.apache.org/tomcat/tomcat-9/v9.0.52/bin/apache-tomcat-9.0.52.tar.gz
-      dest: /usr/local
-  - name: extract tomcat packages
-    unarchive:
-      src: /usr/local/apache-tomcat-9.0.52.tar.gz
-      dest: /usr/local
-      remote_src: yes
-       
-  - name: start tomcat services
-    shell: nohup /usr/local/apache-tomcat-9/bin/startup.sh
-    shell: echo '#! /bin/sh' > installHttp3.sh
-    shell: echo 'sudo yum install httpd -y' >> installHttpd3.sh
-    shell: sudo chmod 755 /home/ec2-user/installHttpd3.sh
-    shell: /home/ec2-user/installHttpd2.sh
+  - name: Get S3 files and deploy into ASG
+   amazon.aws.aws_s3:
+    bucket: rajini123456
+    object: /Notes
+    dest: /home/ec2-user
+    mode: get
+    
