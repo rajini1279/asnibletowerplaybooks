@@ -1,6 +1,6 @@
 ---
 - name: Download s3 file
-  hosts: appServers
+  hosts: localhost
   remote_user: ec2-user
   become: true
 
