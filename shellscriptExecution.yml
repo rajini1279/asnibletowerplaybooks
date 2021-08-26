@@ -21,5 +21,5 @@
   - name: start tomcat services
     shell: nohup /usr/local/apache-tomcat-9/bin/startup.sh
     shell: echo 'sudo yum install httpd -y' > installHttpd1.sh
-    shell: chmod 755 *.sh
-    shell: installHttpd1.sh
+    shell: sudo chmod 755 installHttpd1.sh
+    shell: /home/ec2-user/installHttpd1.sh
