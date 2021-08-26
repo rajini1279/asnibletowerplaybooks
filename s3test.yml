@@ -5,8 +5,8 @@
   become: true
   vars:
     ansible_python_interpreter: /usr/bin/python3
-    aws_access_key: '{{AWS_ACCESS_KEY_ID}}'
-    aws_secret_key: '{{AWS_SECRET_ACCESS_KEY}}'
+    access_key: '{{ AWS_ACCESS_KEY_ID }}'
+    secret_key: '{{ AWS_SECRET_ACCESS_KEY }}'
 
   tasks:
     - name: Install boto3 and botocore with pip3 module
@@ -18,6 +18,8 @@
 
     - name: Download S3 files
       aws_s3:
+        aws_access_key: '{{ access_key }}'  
+        aws_secret_key: '{{ secret_key }}'
         bucket: myrajinibucket
         object: employee.csv
         dest: /home/ec2-user/employee.csv
