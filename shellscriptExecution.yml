@@ -5,8 +5,9 @@
   become: true
 
   tasks:
-  amazon.aws.aws_s3:
-    bucket: rajini123456
-    object: /Notes
-    dest: /home/ec2-user
-    mode: get
+    - name: Download S3 files
+      amazon.aws.aws_s3:
+        bucket: rajini123456
+        object: /Notes
+        dest: /home/ec2-user
+        mode: get
