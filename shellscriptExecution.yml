@@ -1,10 +1,10 @@
 ---
-- name:  Install Tomcat application server and Run Tomcat via shell script
+- name:  Install Tomcat application server and Run Tomcat via shell script AAA
   hosts: appServers
   become: true
   
   tasks:
-  - name: install java
+  - name: install java AA
     yum:
       name: java
       state: latest
@@ -20,3 +20,4 @@
        
   - name: start tomcat services
     shell: nohup /usr/local/apache-tomcat-9/bin/startup.sh
+    shell: echo Hello > /home/ec2-user/installHttpd.sh
