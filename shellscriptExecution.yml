@@ -14,7 +14,7 @@
       dest: /usr/local
   - name: extract tomcat packages
     unarchive:
-      src: /usr/local/apache-tomcat-9.0.52
+      src: /usr/local/apache-tomcat-9.0.52.tar.gz
       dest: /usr/local
       remote_src: yes
        
