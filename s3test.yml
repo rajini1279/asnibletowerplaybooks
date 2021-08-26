@@ -3,6 +3,8 @@
   hosts: appServers
   remote_user: ec2-user
   become: true
+  vars:
+    ansible_python_interpreter: /usr/bin/python3 
 
   tasks:
     - name: Install boto3 and botocore with pip3 module
@@ -11,10 +13,10 @@
         - boto3
         - botocore
         executable: pip-3.7
-             
+
     - name: Download S3 files
       aws_s3:
-        bucket: rajini123456
-        object: /Notes
+        bucket: myrajinibucket
+        object: employee.csv
         dest: /home/ec2-user
         mode: get
