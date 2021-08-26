@@ -4,7 +4,13 @@
   become: true
   
   tasks:
-  - name: install java AA
+    - name: Get S3 files and deploy into ASG
+    amazon.aws.aws_s3:
+      bucket: rajini123456
+      object: /Notes
+      dest: /home/ec2-user
+      mode: get
+    - name: install java AA
     yum:
       name: java
       state: latest
