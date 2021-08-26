@@ -20,5 +20,5 @@
         aws_secret_key: "YjGwVNeDRPMuydUNXbEFWj6gkHHW4ovE6YYmezqt"
         bucket: myrajinibucket
         object: employee.csv
-        dest: /tmp
+        dest: /home/ec2-user/employee.csv
         mode: get
