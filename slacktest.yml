@@ -15,4 +15,4 @@
       domain: domain.slack.com
       token: "T02DG1XP6MN/B02CYLNFB7E/zKZvsQqsW8Ni39WEuwzWM7kv"
       msg: "httpd installed"
-      channel "#apextrainingproject"
+      channel: "#apextrainingproject"
