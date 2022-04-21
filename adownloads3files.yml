@@ -7,5 +7,5 @@
       aws_s3:
         bucket: myrajinibucket
         object: employee.csv
-        dest: /home/centos
+        dest: /home/centos  Ra
         mode: get
